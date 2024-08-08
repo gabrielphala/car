@@ -1,0 +1,29 @@
+.chat{
+  width: 70rem;
+  margin: 10rem auto 0;
+  border: 1px solid #eee;
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.chat__messages{
+  flex-direction: column-reverse;
+}
+
+.chat__messages__item{
+  padding: 1rem;
+  border: 1px solid #eee;
+  display: inline-block;
+  border-radius: 10px;
+  align-self: flex-start;
+  margin-bottom: 1rem;
+}
+
+.chat__messages__item--right{
+  align-self: flex-end;
+}
+
+.chat__footer .input{
+  flex: 1;
+  margin-right: 2rem;
+}

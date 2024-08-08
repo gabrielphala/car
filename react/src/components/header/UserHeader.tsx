@@ -1,0 +1,17 @@
+import { useContext } from "react";
+import "./header.css"
+import { AuthContext } from "../../views/auth/Authenticator";
+
+export default () => {
+  const { user } = useContext(AuthContext);
+
+  return (
+    <header className="header flex flex--a-center flex--j-space-between">
+      <div>
+        <p>DASHBOARD</p>
+        <p>Driver</p>
+      </div>
+      <p><b>{user.name}</b></p>
+    </header>
+  )
+}

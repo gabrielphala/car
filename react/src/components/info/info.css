@@ -1,0 +1,28 @@
+.info{
+  padding-left: 5rem;
+  padding-top: 6rem;
+}
+
+.info__pad{
+  padding: 0 5rem;
+}
+
+.info__page-heading{
+  margin-bottom: 2rem;
+  background-color: #ebebeb;
+  padding: 1rem 5rem;
+}
+
+.info__page-heading__hr{
+  width: 15rem;
+  height: 2px;
+  background-color: #50a2e6;
+  margin-top: 1rem;
+}
+
+.info__requests, .info__services, .info__employees{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-bottom: 3rem;
+}

@@ -1,0 +1,8 @@
+header.header{
+  position: absolute;
+  width: calc(100% - 5rem);
+  padding: 1rem 5rem;
+  margin-left: 5rem;
+  height: 6rem;
+  background-color: #ebebeb;
+}

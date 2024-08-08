@@ -1,0 +1,24 @@
+.sidenav{
+  position: fixed;
+  position: absolute;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 5rem;
+  height: 100%;
+  background-color: #d4d4d4;
+  overflow: hidden;
+  padding: 2rem 0;
+}
+
+.sidenav__top__item:not(:last-child), .sidenav__bottom__item:not(:last-child){
+  margin-bottom: 1rem;
+}
+
+.sidenav__top__item__icon, .sidenav__bottom__item__icon{
+  flex: 0 0 5rem;
+  text-align: center;
+}
+
+.sidenav i{
+  font-size: 1.6rem;
+}

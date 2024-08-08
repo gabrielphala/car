@@ -1,0 +1,7 @@
+.checkout-msg{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 18rem auto 0;
+  width: 50rem;
+}

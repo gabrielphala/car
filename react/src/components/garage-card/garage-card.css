@@ -1,0 +1,10 @@
+.request-card, .service-card{
+  border: 1px solid #dadada;
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+.service-card i{
+  color: darkred;
+  cursor: pointer;
+}

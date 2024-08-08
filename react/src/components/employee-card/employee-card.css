@@ -1,0 +1,11 @@
+.employee-card{
+  border: 1px solid #dadada;
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+.employee-card__profile{
+  flex: 0 0 4rem;
+  height: 4rem;
+  margin-right: 1rem;
+}
