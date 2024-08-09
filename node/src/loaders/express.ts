@@ -15,5 +15,29 @@ export default async (app: Application) => {
 
     await connectDB()
 
+    if (process.env.NODE_ENV == "production") {
+        app.use(express.static(path.join(__dirname, '../../../react/dist')));
+
+        const routes = [
+           "/sign-in",
+            "/sign-up",
+            "/u/requests",
+            "/u/chat",
+            "/g/chat",
+            "/u/requests/pay",
+            "/u/requests/pay/success",
+            "/g/sign-up",
+            "/g/sign-in",
+            "/g/requests",
+            "/g/employees",
+            "/g/services",
+            "/a/garages"
+        ];
+
+        app.get(routes, function (_, res) {
+            res.sendFile(path.join(__dirname, '../../../react/dist', 'index.html'));
+        });
+    }
+
     routes(app);
 };
