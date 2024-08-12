@@ -6,13 +6,17 @@ const headers: any = {
   "Content-Type": "application/json;charset=utf-8",
 };
 
-export const SERVERURL = "http://localhost:3132";
+export const BASEURL = () => {
+  return ['5173', '5174'].includes(location.port) ?
+    'http://localhost:3132' :
+    ''
+}
 
 export const getCookieValue = (name: string) =>
   document.cookie.match("(^|;)\\s*" + name + "\\s*=\\s*([^;]+)")?.pop() || "";
 
 export const post = async (url: string, options: any) => {
-  const res = await fetch(`${SERVERURL}${url}`, {
+  const res = await fetch(`${BASEURL()}${url}`, {
     method: "POST",
     body: JSON.stringify(options.body),
     headers: options.headers,
@@ -42,7 +46,7 @@ export const postWithNoAuth = async (
 };
 
 export const postWithAxios = async (url: string, body: any, options?: any) => {
-  const res = await axios.post(`${SERVERURL}${url}`, body, {
+  const res = await axios.post(`${BASEURL()}${url}`, body, {
     headers: {
       "Content-Type": "multipart/form-data",
       Authorization: `Bearer ${getCookieValue("_cah_sesh")}`,

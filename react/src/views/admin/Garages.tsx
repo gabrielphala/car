@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import AdminManager from "../../components/info/AdminManager";
-import { SERVERURL, postWithAuth } from "../../helpers/http";
+import { BASEURL, postWithAuth } from "../../helpers/http";
 
 import "./Garage.css"
 
@@ -28,7 +28,7 @@ export default () => {
   }
 
   async function downloadImage(filename: string) {
-    const url = await (await fetch(`${SERVERURL}/assets/uploads/documents/${filename}`)).text()
+    const url = await (await fetch(`${BASEURL()}/assets/uploads/documents/${filename}`)).text()
 
     const link = document.createElement('a')
     link.href = url
