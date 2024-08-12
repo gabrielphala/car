@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+Allow /sign-in
+Allow /sign-up
+Allow /u/requests
+Allow /u/chat
+Allow /g/chat
+Allow /u/requests/pay
+Allow /u/requests/pay/success
+Allow /g/sign-up
+Allow /g/sign-in
+Allow /g/requests
+Allow /g/employees
+Allow /g/services
+Allow /a/garages
+
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /junk/

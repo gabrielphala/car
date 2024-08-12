@@ -1,0 +1,5 @@
+.showcase__back{
+  height: 100vh;
+  width: 100vw;
+  filter: brightness(.5);
+}

@@ -1,3 +1,5 @@
+import Home from "./views/base/Home"
+
 import EmployeeSignUp from "./views/auth/EmployeeSignUp"
 import EmployeeSignIn from "./views/auth/EmployeeSignIn"
 import SignIn from "./views/auth/SignIn"
@@ -21,6 +23,7 @@ export default function App () {
     <Router>
       <div className="container">
         <Routes>
+          <Route path="/" element={<Home />}></Route>
           <Route path="/sign-in" element={<SignIn/>}></Route>
           <Route path="/sign-up" element={<SignUp/>}></Route>
           <Route path="/u/requests" element={<UserRequests />}></Route>

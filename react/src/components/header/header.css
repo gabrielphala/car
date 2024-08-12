@@ -2,7 +2,12 @@ header.header{
   position: absolute;
   width: calc(100% - 5rem);
   padding: 1rem 5rem;
-  margin-left: 5rem;
+  left: 5rem;
   height: 6rem;
   background-color: #ebebeb;
+}
+
+header.header--base{
+  width: 100% !important;
+  left: 0;
 }
