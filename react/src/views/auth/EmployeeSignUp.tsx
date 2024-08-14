@@ -6,6 +6,7 @@ import { getElementById, getValueById } from "../../helpers/dom";
 import { addInputFile } from "../../helpers/inputs";
 
 import "./auth.css"
+import { showError } from "../../helpers/error";
 
 let width = 320;    // We will scale the photo width to this
 let height = 0;     // This will be computed based on the input stream
@@ -54,7 +55,9 @@ export default () => {
 
 		setAuth(res.successful);
 
-    // showError('auth', res.error)
+    if (res.error) {
+      showError('auth', res.error)
+    }
 	}
 
 	useEffect(() => {
@@ -212,6 +215,10 @@ export default () => {
             <p>Administrator &amp; Garage details</p>
           </div>
 
+          <div id="auth-error" className="error hide">
+            <p><b>Sorry, </b><span className="error-msg"></span></p>
+          </div>
+
           <div className="flex" style={{ gap: '1rem' }}>
             <div className="input">
               <input type="text" id="garage-name" placeholder="Garage name" />
@@ -228,7 +235,7 @@ export default () => {
           <div className="input">
             <label htmlFor="">Garage type</label>
             <select id="garage-type" style={{ marginTop: '.3rem' }}>
-              <option value="">Choose</option>
+              <option value="select">Choose</option>
               <option value="Filling station">Filling station</option>
               <option value="Workshop">Workshop</option>
               <option value="Breakdowns">Breakdowns</option>

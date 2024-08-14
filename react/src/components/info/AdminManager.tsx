@@ -1,6 +1,6 @@
 import Authenticator from "../../views/auth/Authenticator"
 import Header from "../header/AdminHeader"
-import Sidenav from "../sidenav/Sidenav"
+import Sidenav from "../sidenav/Admin"
 
 import "./info.css"
 

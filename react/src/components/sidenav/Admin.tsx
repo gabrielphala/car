@@ -1,8 +1,10 @@
+import { toggleSidenav } from "./Garage"
+
 export default () => {
   return (
     <div className="sidenav flex">
       <div className="sidenav__top">
-        <div className="sidenav__top__item flex flex--a-center">
+        <div className="sidenav__top__item flex flex--a-center" onClick={toggleSidenav}>
           <div className="sidenav__top__item__icon">
             <i className="fa fa-bars" aria-hidden="true"></i>
           </div>
@@ -13,7 +15,7 @@ export default () => {
 
         <div className="sidenav__top__item flex flex--a-center">
           <div className="sidenav__top__item__icon">
-            <i className="fa fa-archive" aria-hidden="true"></i>
+            <i className="fa fa-industry" aria-hidden="true"></i>
           </div>
           <div className="sidenav__top__item__text">
             <p>Requests</p>
@@ -22,14 +24,14 @@ export default () => {
       </div>
 
       <div className="sidenav__bottom">
-        <div className="sidenav__bottom__item flex flex--a-center">
+        {/* <div className="sidenav__bottom__item flex flex--a-center">
           <div className="sidenav__bottom__item__icon">
             <i className="fa fa-cog" aria-hidden="true"></i>
           </div>
           <div className="sidenav__bottom__item__text">
             <p>Settings</p>
           </div>
-        </div>
+        </div> */}
 
         <div className="sidenav__bottom__item flex flex--a-center">
           <div className="sidenav__bottom__item__icon">

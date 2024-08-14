@@ -4,6 +4,7 @@ import { postWithAuth } from "../../helpers/http";
 import { getValueById } from "../../helpers/dom";
 
 import "./auth.css"
+import { showError } from "../../helpers/error";
 
 export default () => {
   const [isAuth, setAuth] = useState(null) as any;
@@ -20,7 +21,9 @@ export default () => {
 
 		setAuth(res.successful);
 
-    // showError('auth', res.error)
+    if (res.error) {
+      showError('auth', res.error)
+    }
 	}
 
 	useEffect(() => {
@@ -34,6 +37,10 @@ export default () => {
           <div className="auth__main__form__title">
             <h4>Sign in</h4>
             <p>Sign in to access your dashboard</p>
+          </div>
+
+          <div id="auth-error" className="error hide">
+            <p><b>Sorry, </b><span className="error-msg"></span></p>
           </div>
 
           <div className="input">

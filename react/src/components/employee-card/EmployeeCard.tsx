@@ -6,7 +6,7 @@ export default (props: any) => {
       <div className="employee-card__profile image--back image--round" style={{ backgroundImage: 'url("/profile/blank.jpg")' }}></div>
       <div className="employee-card__details">
         <p><b>{props.name}</b></p>
-        <p>last login, Today</p>
+        <p>{props.email}</p>
       </div>
     </div>
   )

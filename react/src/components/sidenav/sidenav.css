@@ -8,6 +8,15 @@
   background-color: #d4d4d4;
   overflow: hidden;
   padding: 2rem 0;
+  transition: width .2s ease;
+}
+
+.sidenav.sidenav--open{
+  width: 30rem;
+}
+
+.sidenav__top__item{
+  cursor: pointer;
 }
 
 .sidenav__top__item:not(:last-child), .sidenav__bottom__item:not(:last-child){

@@ -1,6 +1,11 @@
 .info{
   padding-left: 5rem;
   padding-top: 6rem;
+  transition: padding .2s ease;
+}
+
+.info.info--open{
+  padding-left: 30rem;
 }
 
 .info__pad{

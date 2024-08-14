@@ -1,10 +1,11 @@
 import { useEffect, useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { postWithAxios } from "../../helpers/http";
 import { getElementById, getValueById } from "../../helpers/dom";
 
 import "./auth.css"
 import { addInputFile } from "../../helpers/inputs";
+import { showError } from "../../helpers/error";
 
 let width = 320;    // We will scale the photo width to this
 let height = 0;     // This will be computed based on the input stream
@@ -44,7 +45,9 @@ export default () => {
 
     setAuth(res.successful);
 
-    // showError('auth', res.error)
+    if (res.error) {
+      showError('auth', res.error)
+    }
 	}
 
 	useEffect(() => {
@@ -177,6 +180,10 @@ export default () => {
             <p>Create an account to make requests</p>
           </div>
 
+          <div id="auth-error" className="error hide">
+            <p><b>Sorry, </b><span className="error-msg"></span></p>
+          </div>
+
           <div className="input">
             <input type="text" id="name" placeholder="Full name"  />
           </div>
@@ -220,7 +227,7 @@ export default () => {
           </div>
 
           <div className="auth__main__form__footer flex flex--j-space-around margin--top-2">
-            <p>Sign in instead</p>
+            <p><Link to="/g/sign-up">Sign in instead</Link></p>
             <p>Cookie policy</p>
             <p>Cookie policy</p>
           </div>

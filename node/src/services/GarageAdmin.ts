@@ -13,7 +13,24 @@ async function createGarageAdmin(body: any, req: any, res: any) {
   try {
     if (!req.files[0]) throw 'Please select company registration document or take photo';
 
-    const { name, email, password, garageName, type, location, locationName, registrationNumber } = body;
+    const { name, email, password, passwordAgain, garageName, type, location, locationName, registrationNumber } = body;
+
+    v.validate({
+      'Garage name': { value: garageName, min: 3, max: 50 },
+      'Registration number': { value: registrationNumber, min: 14, max: 14 },
+      'Full name': { value: name, min: 3, max: 50 },
+      'Email address': { value: email, min: 3, max: 50 },
+      'Password': { value: password, min: 8, max: 50 },
+      'Password again': { value: passwordAgain, is: ['Password', 'Passwords don\'t match'] }
+    });
+
+    if (!location) throw "Please select garage location"
+
+    if (!(/^\d{4}\/\d{6}\/\d{2}$/.test(registrationNumber))) throw "Registration number format is incorrect, please use YYYY/NNNNNN/NN";
+
+    if (type == 'select') throw "Please select garage type"
+
+    if (await GarageAdmin.exists({ email })) throw "Garage admin with same email already exists"
 
     const loc = location.split(",");
 
@@ -52,6 +69,11 @@ async function createGarageAdmin(body: any, req: any, res: any) {
 
 async function authGarageAdmin(body: any): Promise<IResponse> {
   try {
+    v.validate({
+      'Email address': { value: body.email, min: 3, max: 50 },
+      'Password': { value: body.password, min: 8, max: 50 },
+    });
+
     const admin = await GarageAdmin.getByEmail(body.email);
 
     if (

@@ -8,7 +8,7 @@ export default () => {
   return (
     <header className="header flex flex--a-center flex--j-space-between">
       <div>
-        <p>DASHBOARD</p>
+        <p className="header__dash"><b>DASHBOARD</b></p>
         <p>Driver</p>
       </div>
       <p><b>{user.name}</b></p>

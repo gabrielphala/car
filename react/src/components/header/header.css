@@ -5,9 +5,20 @@ header.header{
   left: 5rem;
   height: 6rem;
   background-color: #ebebeb;
+  transition: all .2s ease;
+}
+
+header.header--open{
+  left: 30rem !important;
+  width: calc(100% - 30rem) !important;
 }
 
 header.header--base{
   width: 100% !important;
   left: 0;
+}
+
+.header__dash{
+  letter-spacing: .8rem;
+  color: #0071ce;
 }

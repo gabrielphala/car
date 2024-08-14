@@ -11,3 +11,7 @@ export const getValueById = (id: string) => {
 export const getElementById = (id: string) => {
   return document.getElementById(id) as HTMLInputElement | HTMLElement;
 };
+
+export const $cls = (cls: string, parent?: HTMLElement) => {
+  return parent ? parent.getElementsByClassName(cls) : document.getElementsByClassName(cls);
+}

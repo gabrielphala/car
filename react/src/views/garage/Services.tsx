@@ -74,7 +74,7 @@ function ServiceModal (props: any) {
               <input type="text" id="service-name" placeholder="Service name" />
             </div>
 
-            <div className="input">
+            <div className="input margin--top-1">
               <input type="number" id="service-price" placeholder="Service price" />
             </div>
           </div>
