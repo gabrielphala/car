@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { initMap, initAutoComplete } from "../../helpers/map"
 import { postWithAxios } from "../../helpers/http";
 import { getElementById, getValueById } from "../../helpers/dom";
@@ -209,7 +209,7 @@ export default () => {
   return (
     <div className="auth flex">
       <main className="auth__main">
-        <form className="auth__main__form" style={{ width: '38rem' }} onSubmit={signUp}>
+        <form className="auth__main__form auth__main__form--uu" style={{ width: '38rem'}} onSubmit={signUp}>
           <div className="auth__main__form__title">
             <h4>Administrator on-boarding</h4>
             <p>Administrator &amp; Garage details</p>
@@ -270,6 +270,12 @@ export default () => {
           <input type="file" id="registration-file" hidden />
 
           <button type="submit" className="btn btn--primary margin--top-2">Sign up</button>
+
+          <div className="auth__main__form__footer flex flex--j-space-around margin--top-2">
+            <p><Link to="/g/sign-in">Sign in instead</Link></p>
+            <p>Cookie policy</p>
+            <p>Cookie policy</p>
+          </div>
 
           <div className="camera hide" id="camera-con">
             <div className="camera__main" id="camera-main">

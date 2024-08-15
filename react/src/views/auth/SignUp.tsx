@@ -227,7 +227,7 @@ export default () => {
           </div>
 
           <div className="auth__main__form__footer flex flex--j-space-around margin--top-2">
-            <p><Link to="/g/sign-up">Sign in instead</Link></p>
+            <p><Link to="/sign-in">Sign in instead</Link></p>
             <p>Cookie policy</p>
             <p>Cookie policy</p>
           </div>

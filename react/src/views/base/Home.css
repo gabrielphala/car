@@ -1,5 +1,29 @@
 .showcase__back{
   height: 100vh;
-  width: 100vw;
-  filter: brightness(.5);
+  filter: brightness(.2);
+}
+
+.services{
+  padding: 7rem 6rem;
+}
+
+.services__list{
+  gap: 3rem;
+}
+
+.services__list__item{
+  flex: 0 0 calc(100% / 3 - 2rem);
+  text-align: center;
+  border: 1px solid #c2c1c1;
+  padding: 3rem 3rem;
+  border-radius: 6px;
+}
+
+.services__list__item h4{
+  margin: .5rem 0 1rem 0;
+}
+
+.services__list__item i{
+  font-size: 4rem;
+  color: #0071ce;
 }

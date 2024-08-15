@@ -7,6 +7,10 @@
   margin: 22% 20% auto auto;
 }
 
+.auth__main__form--uu{
+  margin: 15% 20% auto auto;
+}
+
 .auth__main__form button{
   width: 100%;
   padding: .8rem;

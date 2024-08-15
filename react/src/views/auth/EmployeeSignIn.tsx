@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { postWithAuth } from "../../helpers/http";
 import { getValueById } from "../../helpers/dom";
 
@@ -57,7 +57,7 @@ export default () => {
           <button type="submit" className="btn btn--primary margin--top-2">Sign in</button>
 
           <div className="auth__main__form__footer flex flex--j-space-around margin--top-2">
-            <p>Sign up instead</p>
+            <p><Link to="/g/sign-up">Sign up instead</Link></p>
             <p>Cookie policy</p>
             <p>Cookie policy</p>
           </div>
