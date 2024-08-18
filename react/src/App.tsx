@@ -1,5 +1,6 @@
 import Home from "./views/base/Home"
 
+import AdminSignIn from "./views/auth/AdminSignIn"
 import EmployeeSignUp from "./views/auth/EmployeeSignUp"
 import EmployeeSignIn from "./views/auth/EmployeeSignIn"
 import SignIn from "./views/auth/SignIn"
@@ -8,10 +9,11 @@ import SignUp from "./views/auth/SignUp"
 
 import UserRequests from "./views/user/Requests"
 import Checkout from "./views/user/Checkout"
-import Chat from "./views/user/Chat"
+import DriverChat from "./views/user/Chat"
 import GarageRequests from "./views/garage/Requests"
 import Employees from "./views/garage/Employees"
 import Services from "./views/garage/Services"
+import GarageChat from "./views/garage/Chat"
 
 import Garages from "./views/admin/Garages"
 import CheckoutSuccess from "./views/user/CheckoutSuccess"
@@ -27,8 +29,8 @@ export default function App () {
           <Route path="/sign-in" element={<SignIn/>}></Route>
           <Route path="/sign-up" element={<SignUp/>}></Route>
           <Route path="/u/requests" element={<UserRequests />}></Route>
-          <Route path="/u/chat" element={<Chat />}></Route>
-          <Route path="/g/chat" element={<Chat />}></Route>
+          <Route path="/u/chat" element={<DriverChat />}></Route>
+          <Route path="/g/chat" element={<GarageChat />}></Route>
           <Route path="/u/requests/pay" element={<Checkout />}></Route>
           <Route path="/u/requests/pay/success" element={<CheckoutSuccess/>}></Route>
           <Route path="/g/sign-up" element={<EmployeeSignUp/>}></Route>
@@ -36,6 +38,7 @@ export default function App () {
           <Route path="/g/requests" element={<GarageRequests/>}></Route>
           <Route path="/g/employees" element={<Employees />}></Route>
           <Route path="/g/services" element={<Services />}></Route>
+          <Route path="/a/sign-in" element={<AdminSignIn />}></Route>
           <Route path="/a/garages" element={<Garages />}></Route>
         </Routes>
       </div>

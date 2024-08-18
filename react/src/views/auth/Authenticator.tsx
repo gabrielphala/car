@@ -14,7 +14,8 @@ export default (props: any) => {
 
       setUser(res)
 
-      if (!res) nav(props?.type == 'user' ? '/sign-in' : '/g/sign-in')
+      if (!res && props?.type != 'admin') nav(props?.type == 'user' ? '/sign-in' : '/g/sign-in')
+      else if (props?.type == 'admin' && !res?.isAdmin) nav('/a/sign-in')
     })()
   }, [])
 

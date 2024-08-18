@@ -354,3 +354,7 @@ table thead th:last-child, table tbody td:last-child{
   background-color: #fff;
   box-shadow: 0 0 3px #dedede;
 }
+
+.hover{
+  cursor: pointer;
+}

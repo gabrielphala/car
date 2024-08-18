@@ -38,6 +38,16 @@ export default class BaseController {
         }, res);
       };
 
+  signOut = (req, res) => {
+    this.resWrap((response: IResponse) => {
+      res.clearCookie('_cah_sesh');
+
+      response.successful = true;
+
+      return response;
+    }, res)
+  }
+
   // wrap_with_request = (service_method: (r: IResponse, b: IAny, rq: Request) => Promise<IResponse> | IResponse) => (req: Request, res: Response) => {
   //     this.resWrap(async (response: IResponse) => {
   //         return await service_method(response, req.body, req)

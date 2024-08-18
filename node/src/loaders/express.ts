@@ -3,6 +3,7 @@ import path from "path";
 import expressLayouts from "express-ejs-layouts"
 import connectDB from "../config/database";
 import routes from "../api/routes";
+import init_admin from "../config/init_admin";
 
 
 export default async (app: Application) => {
@@ -15,11 +16,13 @@ export default async (app: Application) => {
 
     await connectDB()
 
+    await init_admin()
+
     if (process.env.NODE_ENV == "production") {
         app.use(express.static(path.join(__dirname, '../../../react/dist')));
 
         const routes = [
-           "/sign-in",
+            "/sign-in",
             "/sign-up",
             "/u/requests",
             "/u/chat",
@@ -31,6 +34,7 @@ export default async (app: Application) => {
             "/g/requests",
             "/g/employees",
             "/g/services",
+            "/a/sign-in",
             "/a/garages"
         ];
 

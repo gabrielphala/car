@@ -6,7 +6,7 @@ import "./info.css"
 
 export default ({ children }: any) => {
   return (
-    <Authenticator>
+    <Authenticator type="admin">
       <Header/>
       <Sidenav/>
       <div className="info">

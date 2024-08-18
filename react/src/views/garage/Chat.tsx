@@ -1,19 +1,17 @@
 import Chat from "../../components/chat/Chat";
-import UserManager from "../../components/info/UserManager";
+import GarageManager from "../../components/info/GarageManager";
 
 export default () => {
-  
-
   return (
-    <UserManager>
+    <GarageManager>
       <div className="info__page-heading">
         <h1>Messaging</h1>
-        <p>Message your mechanic</p>
+        <p>Message your client</p>
       </div>
 
       <div className="info__pad">
         <Chat></Chat>
       </div>
-    </UserManager>
+    </GarageManager>
   )
 }

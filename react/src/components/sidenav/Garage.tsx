@@ -1,5 +1,6 @@
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { $cls } from "../../helpers/dom"
+import { postWithAuth } from "../../helpers/http"
 
 export const toggleSidenav = () => {
   let sidenav = $cls('sidenav')[0]
@@ -21,6 +22,14 @@ export const toggleSidenav = () => {
 }
 
 export default () => {
+  const nav = useNavigate();
+
+  const signOut = () => {
+    postWithAuth('/sign-out', {}, true)
+
+    nav('/g/sign-in');
+  }
+
   return (
     <div className="sidenav flex">
       <div className="sidenav__top">

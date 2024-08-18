@@ -9,6 +9,7 @@
 
 .services__list{
   gap: 3rem;
+  flex-wrap: wrap;
 }
 
 .services__list__item{
@@ -26,4 +27,37 @@
 .services__list__item i{
   font-size: 4rem;
   color: #0071ce;
+}
+
+@media only screen and (max-width: 988px) {
+  .showcase button {
+    background-color: lightblue;
+    bottom: 4rem !important;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .services__list__item{
+    flex: 0 0 calc(100% / 2 - 2rem);
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .services__list__item {
+    flex: 0 0 100%;
+  }
+}
+
+@media only screen and (max-width: 426px) {
+  .showcase h1 {
+    font-size: 4.5rem !important;
+  }
+
+  header, .services{
+    padding: 2rem !important;
+  }
+
+  .showcase__caption{
+    left: 2rem !important;
+  }
 }

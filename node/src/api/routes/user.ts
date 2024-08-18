@@ -81,4 +81,6 @@ export default (app: any) => {
       return this;
     })
   );
+
+  app.post("/sign-out", BaseController.signOut);
 };

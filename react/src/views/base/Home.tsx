@@ -6,14 +6,14 @@ export default function App() {
     <>
       <header className="flex flex--a-center flex--j-space-between" style={{ position: 'fixed', width: '100%', zIndex: '3', color: '#fafafa', padding: '2rem 6rem' }}>
         <p>CAR <b>ASSIST HUB</b></p>
-        <ul className="flex">
+        <ul className="home-header__links flex">
           <li className="margin--right-2"><Link to="/sign-in">Driver sign in</Link></li>
           <li><Link to="/g/sign-in">Garage sign in</Link></li>
         </ul>
       </header>
       <div className="showcase">
         <div className="showcase__back image--back" style={{ backgroundImage: "url('/background/4.jpg')" }}></div>
-        <div className="pos--abs pos--vertical" style={{ left: '6rem', width: '30rem', color: '#fafafa' }}>
+        <div className="showcase__caption pos--abs pos--vertical" style={{ left: '6rem', width: '30rem', color: '#fafafa' }}>
           <h1 style={{ fontSize: '6rem' }}>
             For Your <span style={{color: '#0071ce'}}>Road</span> side <span style={{color: '#0071ce'}}>Assistance</span>
           </h1>

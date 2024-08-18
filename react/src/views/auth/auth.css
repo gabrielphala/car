@@ -86,3 +86,32 @@
 .camera__main img{
   z-index: 5;
 }
+
+.admin-login__main{
+  width: 40rem;
+  margin: 15rem auto;
+}
+
+.admin-login__main h4, .admin-login__main__form__home{
+  text-align: center;
+}
+
+.admin-login__main__form{
+  margin-top: 3rem;
+}
+
+@media only screen and (max-width: 769px) {
+  .auth__main__form{
+    margin: 22% auto 0;
+  }
+  .auth__background{
+    display: none !important;
+  }
+}
+
+@media only screen and (max-width: 426px) {
+  .auth__main__form, .admin-login__main {
+    width: calc(100% - 4rem);
+    margin: 22% 2rem 0;
+  }
+}

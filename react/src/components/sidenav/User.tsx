@@ -1,6 +1,16 @@
+import { useNavigate } from "react-router-dom";
 import { toggleSidenav } from "./Garage"
+import { postWithAuth } from "../../helpers/http";
 
 export default () => {
+  const nav = useNavigate();
+
+  const signOut = () => {
+    postWithAuth('/sign-out', {}, true)
+
+    nav('/sign-in');
+  }
+
   return (
     <div className="sidenav flex">
       <div className="sidenav__top">
@@ -33,7 +43,7 @@ export default () => {
           </div>
         </div> */}
 
-        <div className="sidenav__bottom__item flex flex--a-center">
+        <div className="sidenav__bottom__item flex flex--a-center hover" onClick={signOut}>
           <div className="sidenav__bottom__item__icon">
             <i className="fa fa-sign-out" aria-hidden="true"></i>
           </div>
