@@ -78,7 +78,7 @@ export default () => {
           </div>
         </div> */}
 
-        <div className="sidenav__bottom__item flex flex--a-center">
+        <div className="sidenav__bottom__item flex flex--a-center hover" onClick={signOut}>
           <div className="sidenav__bottom__item__icon">
             <i className="fa fa-sign-out" aria-hidden="true"></i>
           </div>
