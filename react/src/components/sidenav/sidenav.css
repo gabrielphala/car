@@ -31,3 +31,9 @@
 .sidenav i{
   font-size: 1.6rem;
 }
+
+@media only screen and (max-width: 426px) {
+  .sidenav{
+    display: none !important
+  }
+}

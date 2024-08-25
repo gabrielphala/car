@@ -17,6 +17,7 @@ export default class Garage extends Model {
       locationName: { type: String },
       credit: { type: Number, default: 0 },
       isVerified: { type: Boolean, default: false },
+      isDeclined: { type: Boolean, default: false },
       isDeleted: { type: Boolean, default: false },
       createdAt: { type: Date, default: Date.now },
     });
@@ -38,7 +39,7 @@ export default class Garage extends Model {
 
   getAllByUnverified() {
     return this.model.find({
-      condition: { isVerified: false },
+      condition: { isVerified: false, isDeclined: false },
     });
   }
 }

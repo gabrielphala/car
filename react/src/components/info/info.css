@@ -31,3 +31,51 @@
   gap: 2rem;
   margin-bottom: 3rem;
 }
+
+.dropdown-menu{
+  padding: 1rem 2rem;
+  display: none;
+}
+
+.dropdown-menu.open{
+  display: block;
+}
+
+@media only screen and (max-width: 426px) {
+  .info {
+    padding-left: 0 !important;
+  }
+
+  .info__page-heading {
+    padding: 1rem 2rem !important;
+  }
+
+  .info__pad {
+    padding: 0 2rem !important;
+  }
+
+  .search-services{
+    margin: 2rem 0 3rem !important;
+  }
+
+  .garage-list{
+    font-size: 80%;
+  }
+
+  .modal__main {
+    width: calc(100% - 4rem) !important;
+    margin: 8rem 2rem 0 !important;
+  }
+
+  .chat{
+    width: 100% !important;
+    margin: 4rem 0 0 !important;
+  }
+
+  .info__requests,
+  .info__services,
+  .info__employees {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+  }
+}

@@ -22,3 +22,11 @@ header.header--base{
   letter-spacing: .8rem;
   color: #0071ce;
 }
+
+@media only screen and (max-width: 426px) {
+  header.header {
+    width: 100%;
+    padding: 1rem 2rem !important;
+    left: 0;
+  }
+}

@@ -5,3 +5,9 @@
   margin: 18rem auto 0;
   width: 50rem;
 }
+
+@media only screen and (max-width: 426px) {
+  .btn-container{
+    padding: 0 3rem !important;
+  }
+}

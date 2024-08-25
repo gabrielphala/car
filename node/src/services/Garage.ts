@@ -25,4 +25,16 @@ async function acceptGarage(body: any): Promise<IResponse> {
   return this;
 }
 
-export default { getAllByUnverified, acceptGarage };
+async function declineGarage(body: any): Promise<IResponse> {
+  await Garage.updateOne(
+    { _id: body.garageId },
+    { 
+      isDeclined: true
+    }
+  )
+
+  this.successful = true;
+  return this;
+}
+
+export default { getAllByUnverified, acceptGarage, declineGarage };

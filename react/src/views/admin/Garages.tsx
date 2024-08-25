@@ -27,6 +27,14 @@ export default () => {
     setGarages(await getGarages());
   }
 
+  const declineGarage = async (garageId: string) => {
+    await postWithAuth('/garages/decline', {
+      garageId
+    })
+
+    setGarages(await getGarages());
+  }
+
   async function downloadImage(filename: string) {
     const url = await (await fetch(`${BASEURL()}/assets/uploads/documents/${filename}`)).text()
 
@@ -72,8 +80,8 @@ export default () => {
                         (<p onClick={() => downloadImage(garage.registrationDocument)}>Download document</p>)
                       }
                     </span>
-                    <span onClick={() => acceptGarage(garage._id)} style={{ color: 'blue' }} className="margin--right-1">Accept</span>
-                    <span style={{ color: 'darkred' }}>Decline</span>
+                    <span onClick={() => acceptGarage(garage._id)} style={{ color: 'blue' }} className="margin--right-1 hover">Accept</span>
+                    <span onClick={() => declineGarage(garage._id)}  style={{ color: 'darkred' }} className="hover">Decline</span>
                   </td>
                 </tr>
               ))
