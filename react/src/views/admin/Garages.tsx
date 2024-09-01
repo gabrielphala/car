@@ -53,7 +53,7 @@ export default () => {
         <p>Accept or Decline garages</p>
       </div>
 
-      <div style={{ padding: '0 15%' }}>
+      <div className="info__pad" style={{ padding: '0 15%' }}>
         <h4>Verification.</h4>
         <p>Verify garages</p>
 

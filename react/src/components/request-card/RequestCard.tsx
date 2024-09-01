@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
 import { formatTime } from "../../helpers/date"
 import "./request-card.css"
+import { cutstr } from "../../helpers/str";
 
 export default (props: any) => {
   let start = props.isGarage ? props.employeeLocation : props.location;
@@ -18,6 +19,7 @@ export default (props: any) => {
           <p><b>{props.service}</b></p>
           <p>{props.isGarage ? props.requester.name : props.garage.name}</p>
           <p>{formatTime(new Date(props.createdAt))}</p>
+          {props.employee && <p>Your technician is {cutstr(props.employee.name)}</p> }
         </div>
       </div>
       <div className="flex flex--a-center flex--j-space-between" style={{
@@ -49,7 +51,7 @@ export default (props: any) => {
           (!props.employee && props.isGarage) ? (
             <p><i className="fa-solid fa-user-plus" onClick={(e: any) => props.showEmployees(e, props._id)}></i></p>
           ) :
-            (<p>{props.employee && props.employee.name}</p>)
+            (<></>)
         }
       </div>
     </div>

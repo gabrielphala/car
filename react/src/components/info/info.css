@@ -54,6 +54,10 @@
     padding: 0 2rem !important;
   }
 
+  .info__pad table{
+    font-size: 43%;
+  }
+
   .search-services{
     margin: 2rem 0 3rem !important;
   }

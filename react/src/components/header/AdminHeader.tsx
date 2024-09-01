@@ -3,6 +3,8 @@ import { AuthContext } from "../../views/auth/Authenticator";
 import "./header.css"
 import { getElementById } from "../../helpers/dom";
 
+import { cutstr } from "../../helpers/str";
+
 export const openMainDropdownMenu = () => {
   if (getElementById('dropdown-menu').classList.contains('open')) {
     getElementById('dropdown-menu').classList.remove('open')
@@ -22,8 +24,8 @@ export default () => {
         <p className="header__dash"><b>DASHBOARD</b></p>
         <p>Administrator</p>
       </div>
-      <div className="flex flex--a-center">
-        <p className="margin--right-1"><b>{user.name}</b></p>
+      <div className="header__user flex flex--a-center">
+        <p className="margin--right-1"><b>{cutstr(user.name)}</b></p>
         <i className="fa-solid fa-bars" onClick={openMainDropdownMenu}></i>
       </div>
     </header>
