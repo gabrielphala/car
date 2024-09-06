@@ -3,10 +3,12 @@ import { getQuery } from "../../helpers/URL"
 import { getValueById } from "../../helpers/dom"
 import { getUserBySession, postWithAuth } from "../../helpers/http"
 import "./chat.css"
+import { Link } from "react-router-dom"
 
 const getAll = async () => {
   const res = await postWithAuth('/chat/get', {
-    receiver: getQuery('r')
+    receiver: getQuery('r'),
+    request: getQuery('a')
   })
 
   return res.messages;
@@ -32,6 +34,7 @@ export default () => {
   const sendMessage = async () => {
     await postWithAuth('/chat/send', {
       receiverId: getQuery('r'),
+      requestId: getQuery('a'),
       message: getValueById('mssg')
     });
 
@@ -41,21 +44,29 @@ export default () => {
   }
 
   return (
-    <div className="chat">
-      <div className="chat__messages flex">
-        {messages.map((message: any) => (
-          <p className={`chat__messages__item ${message.sender == kind ? 'chat__messages__item--right' : ''}`}>
-            {message.message}
-          </p>
-        ))}
-      </div>
-    
-      <div className="chat__footer flex margin--top-2">
-        <div className="input">
-          <input type="text" id="mssg" placeholder="Type message" />
+    <>
+      <Link to={kind == 'user' ? '/u/requests' : '/g/requests'}>
+        <div className="chat-top">
+          <p><strong>Return</strong></p>
+          <p>To requests</p>
         </div>
-        <button className="btn btn--primary" onClick={sendMessage}>Send</button>
+      </Link>
+      <div className="chat">
+        <div className="chat__messages flex">
+          {messages.map((message: any) => (
+            <p className={`chat__messages__item ${message.sender == kind ? 'chat__messages__item--right' : ''}`}>
+              {message.message}
+            </p>
+          ))}
+        </div>
+
+        <div className="chat__footer flex margin--top-2">
+          <div className="input">
+            <input type="text" id="mssg" placeholder="Type message" />
+          </div>
+          <button className="btn btn--primary" onClick={sendMessage}>Send</button>
+        </div>
       </div>
-    </div>
+    </>
   )
 }

@@ -21,4 +21,10 @@ export default class User extends Model {
       condition: { email },
     });
   }
+
+  getDrivers() {
+    return this.model.find({
+      condition: { isDeleted: false },
+    });
+  }
 }

@@ -40,6 +40,16 @@ export async function getServicesByGarage(_, user) {
   return this;
 }
 
+export async function getAll() {
+  try {
+    this.services = await Service.getAll();
+  } catch (e) {
+    throw e;
+  }
+
+  return this;
+}
+
 export async function searchGaragesByServices(body: any): Promise<IResponse> {
   try {
     const { query, location } = body;

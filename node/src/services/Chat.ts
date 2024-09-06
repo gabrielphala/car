@@ -10,7 +10,8 @@ export async function send(body, user) {
       driver,
       admin,
       message: body.message,
-      sender: user.garage ? 'admin' : 'user'
+      sender: user.garage ? 'admin' : 'user',
+      request: body.requestId
     });
 
     this.successful = true;
@@ -23,7 +24,7 @@ export async function send(body, user) {
 
 export async function getAll(body, user) {
   try {
-   this.messages = user.garage ? await Chat.getForAdmin(user._id, body.receiver): await Chat.getForDriver(user._id, body.receiver);
+   this.messages = user.garage ? await Chat.getForAdmin(user._id, body.receiver, body.request): await Chat.getForDriver(user._id, body.receiver, body.request);
 
     this.successful = true;
   } catch (e) {

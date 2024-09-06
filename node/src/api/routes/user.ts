@@ -56,6 +56,16 @@ export default (app: any) => {
   );
 
   app.post(
+    "/users/get/all/employees",
+    BaseController.wrapWithUser(garageAdminServices.getAllGarageEmployees)
+  );
+
+  app.post(
+    "/users/get/drivers",
+    BaseController.wrapWithUser(userServices.getDrivers)
+  );
+
+  app.post(
     "/g/sign-up",
     (req, res, next) => {
       anyFiles("./public/assets/uploads/documents", "pdf")(

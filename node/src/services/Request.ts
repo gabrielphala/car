@@ -1,4 +1,5 @@
 import Request from "../models/Request";
+import Payment from "../models/Payment";
 import Garage from "../models/Garage";
 import { getDistance } from "../helpers/Distance";
 
@@ -34,6 +35,13 @@ export async function updatePay(body) {
     request.hasPaid = true;
 
     request.save();
+
+    await Payment.add({
+      garage: request.garage,
+      requester: request.requester,
+      price: request.price,
+      service: request.service
+    })
 
     return this;
   } catch (e) {
@@ -97,6 +105,15 @@ export async function getById(body) {
     throw e;
   }
 
+  return this;
+}
+
+export async function getAll() {
+  try {
+    this.requests = await Request.getAll()
+  } catch (e) {
+    throw e;
+  }
   return this;
 }
 

@@ -19,7 +19,7 @@ export default (props: any) => {
           <p><b>{props.service}</b></p>
           <p>{props.isGarage ? props.requester.name : props.garage.name}</p>
           <p>{formatTime(new Date(props.createdAt))}</p>
-          {props.employee && <p>Your technician is {cutstr(props.employee.name)}</p> }
+          {(props.employee && <p>Assigned to {cutstr(props.employee.name)}</p>) || <p>Waiting for employee</p>}
         </div>
       </div>
       <div className="flex flex--a-center flex--j-space-between" style={{
@@ -29,7 +29,7 @@ export default (props: any) => {
         <p>
           {props.isAccepted ? 'Accepted' : (props.isDeclined ? 'Declined' : 'Pending')}
           {
-            !props.hasPaid && (
+            !props.hasPaid && !props.isGarage && (
               <span style={{ marginLeft: '2rem' }}><Link to={`/u/requests/pay?request=${props._id}`}>Pay now</Link></span>
             )
             
@@ -38,7 +38,7 @@ export default (props: any) => {
         <p><span onClick={() => props.calcRoute(start, end)}>Track</span></p>
         {
           props.employee ?
-            <p><Link to={`/${props.isGarage ? 'g' : 'u'}/chat?r=${props.isGarage ? props.requester._id : props.employee._id}`}>Chat</Link></p> :
+            <p><Link to={`/${props.isGarage ? 'g' : 'u'}/chat?r=${props.isGarage ? props.requester._id : props.employee._id}&a=${props._id}`}>Chat</Link></p> :
             <></> 
         }
         {

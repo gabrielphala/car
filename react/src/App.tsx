@@ -15,7 +15,13 @@ import Employees from "./views/garage/Employees"
 import Services from "./views/garage/Services"
 import GarageChat from "./views/garage/Chat"
 
+import GarageEmployees from "./views/admin/Employees"
 import Garages from "./views/admin/Garages"
+import Requests from "./views/admin/Requests"
+import AllServices from "./views/admin/Services"
+import Users from "./views/admin/Users"
+import Payments from "./views/admin/Payments"
+
 import CheckoutSuccess from "./views/user/CheckoutSuccess"
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
@@ -39,7 +45,13 @@ export default function App () {
           <Route path="/g/employees" element={<Employees />}></Route>
           <Route path="/g/services" element={<Services />}></Route>
           <Route path="/a/sign-in" element={<AdminSignIn />}></Route>
+
           <Route path="/a/garages" element={<Garages />}></Route>
+          <Route path="/a/services" element={<AllServices />}></Route>
+          <Route path="/a/payments" element={<Payments />}></Route>
+          <Route path="/a/users" element={<Users />}></Route>
+          <Route path="/a/requests" element={<Requests />}></Route>
+          <Route path="/a/employees" element={<GarageEmployees />}></Route>
         </Routes>
       </div>
     </Router>

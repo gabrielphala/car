@@ -31,4 +31,11 @@ export default class Service extends Model {
       populate: [['garage', '']]
     });
   }
+
+  getAll () {
+    return this.model.find({
+      condition: { isDeleted: false },
+      populate: [['garage', '']]
+    });
+  }
 }

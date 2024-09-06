@@ -38,7 +38,8 @@ export default () => {
           return actions?.order?.capture().then(async function (_: any) {
 
             await postWithAuth('/request/update/pay', {
-              requestId: getQuery('request')
+              requestId: getQuery('request'),
+              price: res.request.price
             })
 
             nav('/u/requests/pay/success')

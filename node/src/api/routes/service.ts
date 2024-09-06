@@ -5,6 +5,7 @@ import {
   addService,
   getServicesByGarage,
   removeService,
+  getAll
 } from "../../services/Service";
 
 export default (app: any) => {
@@ -13,6 +14,16 @@ export default (app: any) => {
 
   app.post(
     "/services/get/by/garage",
+    BaseController.wrapWithUser(getServicesByGarage)
+  );
+
+  app.post(
+    "/services/get",
+    BaseController.wrapWithUser(getAll)
+  );
+
+  app.post(
+    "/services/get",
     BaseController.wrapWithUser(getServicesByGarage)
   );
 };

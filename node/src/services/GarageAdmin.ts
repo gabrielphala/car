@@ -103,4 +103,14 @@ async function getEmployees(_: any, user: any) : Promise<IResponse> {
   return this;
 }
 
-export default { createGarageAdmin, authGarageAdmin, getEmployees };
+async function getAllGarageEmployees(body: any): Promise<IResponse> {
+  try {
+    this.employees = await GarageAdmin.getAll();
+    this.successful = true;
+  } catch (error) {
+    throw error;
+  }
+  return this;
+}
+
+export default { createGarageAdmin, authGarageAdmin, getEmployees, getAllGarageEmployees };

@@ -7,6 +7,7 @@ export default class Chat extends Model {
     const schema = new mongoose.Schema({
       driver: { type: Types.ObjectId },
       admin: { type: Types.ObjectId },
+      request: { type: Types.ObjectId },
       message: { type: String, required: true },
       sender: { type: String, required: true },
       isDeleted: { type: Boolean, default: false },
@@ -16,15 +17,15 @@ export default class Chat extends Model {
     super(mongoose, "Chat", QueryBuilder, schema);
   }
 
-  getForAdmin (user: any, receiver: any) {
+  getForAdmin (user: any, receiver: any, request: any) {
     return this.model.find({
-      condition: {admin: user, driver: receiver}
+      condition: {admin: user, driver: receiver, request}
     });
   }
 
-  getForDriver (user: any, receiver: any) {
+  getForDriver (user: any, receiver: any, request: any) {
     return this.model.find({
-      condition: {driver: user, admin: receiver}
+      condition: {driver: user, admin: receiver, request}
     });
   }
 }

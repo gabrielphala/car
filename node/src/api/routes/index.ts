@@ -6,6 +6,7 @@ import requestRoutes from "./request";
 import serviceRoutes from "./service";
 import garageRoutes from "./garage";
 import chatRoutes from "./chat";
+import paymentRoutes from "./payments";
 
 export default (app: Application): void => {
   userRoutes(app);
@@ -14,4 +15,5 @@ export default (app: Application): void => {
   serviceRoutes(app);
   garageRoutes(app);
   chatRoutes(app);
+  paymentRoutes(app);
 };

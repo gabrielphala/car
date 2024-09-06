@@ -56,9 +56,19 @@ async function authUser(body: any): Promise<IResponse> {
   return this;
 }
 
+async function getDrivers(body: any): Promise<IResponse> {
+  try {
+    this.drivers = await User.getDrivers();
+    this.successful = true;
+  } catch (error) {
+    throw error;
+  }
+  return this;
+}
+
 async function getUserSession(_, user: any): Promise<IResponse> {
   this.user = user;
   return this;
 }
 
-export default { getUserSession, createUser, authUser };
+export default { getDrivers, getUserSession, createUser, authUser };

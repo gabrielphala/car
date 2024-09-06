@@ -29,4 +29,11 @@ export default class GarageAdmin extends Model {
       condition: { garage }
     });
   }
+
+  getAll () {
+    return this.model.find({
+      condition: { isDeleted: false },
+      populate: [['garage', '']]
+    });
+  }
 }

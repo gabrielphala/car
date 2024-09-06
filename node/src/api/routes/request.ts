@@ -9,6 +9,7 @@ import {
   getRequestsByUser,
   assignEmployee,
   getById,
+  getAll,
   updatePay,
 } from "../../services/Request";
 
@@ -24,6 +25,10 @@ export default (app: any) => {
   app.post(
     "/requests/get/by/garage",
     BaseController.wrapWithUser(getRequestsByGarage)
+  );
+  app.post(
+    "/requests/get",
+    BaseController.wrapWithUser(getAll)
   );
   app.post(
     "/requests/get/by/id",

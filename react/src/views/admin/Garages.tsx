@@ -60,6 +60,7 @@ export default () => {
         <table className="table margin--top-2" style={{ width: '100%' }}>
           <thead>
             <tr>
+              <th>#</th>
               <th>Garage</th>
               <th>Location</th>
               <th>Registration Number</th>
@@ -68,8 +69,9 @@ export default () => {
           </thead>
           <tbody>
             {
-              garages?.map((garage: any) => (
+              garages?.map((garage: any, i: number) => (
                 <tr key={garage._id}>
+                  <td>{i + 1}</td>
                   <td>{garage.name}</td>
                   <td>{garage.locationName}</td>
                   <td>{garage.registrationNumber}</td>

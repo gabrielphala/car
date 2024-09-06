@@ -36,6 +36,14 @@ export default class Request extends Model {
     });
   }
 
+  getAll() {
+    return this.model.find({
+      condition: { isDeleted: false },
+      populate: [["requester", "name"], ["garage", "name"], ['employee', 'name']],
+
+    });
+  }
+
   getRequestsByEmployee(id: string | Types.ObjectId) {
     return this.model.find({
       condition: { employee: id }
