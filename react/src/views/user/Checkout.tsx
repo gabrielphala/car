@@ -6,7 +6,7 @@ import { getQuery } from "../../helpers/URL";
 export default () => {
   const nav = useNavigate();
 
-  loadScript({ "clientId": "AQtF67cA1whvPu8dBd1Ct0DUfp0CjFbERxSxbgqhZsTuhL80vN4o0L8CxXDIkCrGwEZ74qgwICwWhdHf" })
+  loadScript({ "clientId": "AZWCyYW2rW0pqEAwLOEbgjG5TAhM6vwpJCofVTvWNCpwZaAO9joZp3rVIKjagErBrvF9mevimAyqQhCK" })
     .then(async (paypal: any) => {
       if (!paypal) return;
 
